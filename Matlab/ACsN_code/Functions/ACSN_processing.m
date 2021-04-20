@@ -4,7 +4,7 @@ textprogressbar('Processing: ');
 
 for frame = 1:size(I,3)
     
-    [img(:,:,frame), sigma(frame),I1] = ACSN_core(I(:,:,frame),NA,Lambda,PixelSize,Gain,Offset,Hotspot,w); %#ok<*SAGROW>
+    [img(:,:,frame), sigma(frame),I1] = ACSN_core(I(:,:,frame),NA,Lambda,PixelSize,Gain,Offset,Hotspot,Weight); %#ok<*SAGROW>
     
     if QM(1)=='y'
         Qmap(:,:,frame) = Quality_Map(img(:,:,frame),I1);

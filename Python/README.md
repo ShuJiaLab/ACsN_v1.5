@@ -50,4 +50,4 @@ To run ACsN files:
    - python ACSN_Run.py
 
 ## Creators ##
-Suraj Rajendran and Biagio Mandracchia
+Suraj Rajendran (Python Version) and Biagio Mandracchia

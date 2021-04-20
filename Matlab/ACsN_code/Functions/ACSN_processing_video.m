@@ -5,7 +5,7 @@ textprogressbar('Processing: ');
 
 for frame = 1:size(I,3)
     
-    [img(:,:,frame), sigma(frame),I1(:,:,frame)] = ACSN_core(I(:,:,frame),NA,Lambda,PixelSize,Gain,Offset,Hotspot,w); %#ok<*SAGROW>
+    [img(:,:,frame), sigma(frame),I1(:,:,frame)] = ACSN_core(I(:,:,frame),NA,Lambda,PixelSize,Gain,Offset,Hotspot,Weight); %#ok<*SAGROW>
     
     % Update progress bar
     textprogressbar(frame/size(I,3).*100)

@@ -23,6 +23,13 @@ Please, cite our paper on [Nature Communications].
 
 Mandracchia, B., Hua, X., Guo, C. et al. Fast and accurate sCMOS noise correction for fluorescence microscopy. Nat Commun 11, 94 (2020) doi:10.1038/s41467-019-13841-8
 
+## Version Updates ##
+Extended support to Linux and Mac OS (partial)
+Added Python version
+Video filtering processes have been updated
+Sparse Filtering updated
+Python version is partially compatible with GPU computing
+Addition of weight factor to allow for user control of smoothing
 
 ## Python: ##
 ## System Requirements ##
@@ -35,6 +42,7 @@ CPU: 6+ cores, 3.2+ GHz/core.
 ### Software Requirements ###
 Python 3.7+
 Windows OS 7+
+Linux OS
 Partial functionality on Mac OS
 
 ## Install ##

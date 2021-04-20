@@ -51,9 +51,6 @@ To run ACsN files:
  - Load your files using the ASCN_Run.py file. Run the ACSN_Run.py file in the terminal using the command (possible only when you're in the same directory):
    - python ACSN_Run.py
 
-## Creators ##
-Suraj Rajendran and Biagio Mandracchia
-
 ## MATLAB: ##
 ## System Requirements ##
 ### Hardware Requirements ###
@@ -93,3 +90,6 @@ The installation on a recommended computer should take less than 3 seconds.
 
 [ImageJ-MATLAB]: https://imagej.net/MATLAB_Scripting#Prerequisites
 [Nature Communications]: https://www.nature.com/articles/s41467-019-13841-8
+
+## Creators ##
+Suraj Rajendran (Python Version) and Biagio Mandracchia

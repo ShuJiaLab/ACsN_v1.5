@@ -36,7 +36,7 @@ Windows OS 7+
 Partial functionality on Mac OS
 
 ## Install ##
-### Graphic Interface ###
+### Command Line ###
 To run ACsN files:
 
  - Clone this repository

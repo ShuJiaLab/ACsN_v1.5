@@ -24,7 +24,7 @@
 # %       Mode
 # %           'Normal' | 'Fast' (default)
 # %       Weight
-# %           weight for noise estimation
+# %           weight for noise estimation (decrease to reduce smoothing)
 # %
 # %
 # % OUTPUTS:

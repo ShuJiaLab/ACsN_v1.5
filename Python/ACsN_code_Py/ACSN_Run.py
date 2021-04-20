@@ -23,6 +23,8 @@
 # %           0 | 1 (default)
 # %       Mode
 # %           'Normal' | 'Fast' (default)
+# %       Weight
+# %           weight for noise estimation
 # %
 # %
 # % OUTPUTS:

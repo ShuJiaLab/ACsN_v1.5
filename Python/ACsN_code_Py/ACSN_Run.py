@@ -48,6 +48,7 @@ import os
 from skimage import io
 import sys
 import time
+from pathlib import Path
 import numpy as np
 import cupy as cp
 import pickle
@@ -57,11 +58,15 @@ from ACSN import ACSN
 from scipy.io import loadmat
 from matplotlib import pyplot as plt
 
-cmap = loadmat('D:/Jia Lab/ACsN/Python/Python Test Images/cmap.mat')['blow']
-gain = loadmat('D:/Jia Lab/ACsN/Python/Python Test Images/gain.mat')['gain']
-offset = loadmat('D:/Jia Lab/ACsN/Python/Python Test Images/offset.mat')['offset']
+path = Path(os.path.abspath(__file__))
+code_dir = os.path.join(path.parent.absolute(),"..")
+test_image_dir = os.path.join(path.parent.absolute(),"../Python Test Images/")
 
-I = io.imread('D:/Jia Lab/ACsN/Python/Python Test Images/TIRF_01_10ms.tif')
+cmap = loadmat(os.path.join(test_image_dir,'cmap.mat'))['blow']
+gain = loadmat(os.path.join(test_image_dir,'gain.mat'))['gain']
+offset = loadmat(os.path.join(test_image_dir,'offset.mat'))['offset']
+
+I = io.imread(os.path.join(test_image_dir,'TIRF_01_10ms.tif'))
 color = False
 
 I = I[0]
@@ -98,18 +103,18 @@ img = img.astype(np.int16) # very low light - maybe use floating point to see th
 # Show image
 plt.imshow(I[:, :, 0], cmap="hot", interpolation="nearest")
 plt.title("First Frame with No Correction")
-plt.show()
+# plt.show()
 
 plt.imshow(img[:, :, 0], cmap="hot", interpolation="nearest")
 plt.title("First Frame with Correction")
-plt.show()
+# plt.show()
 
 img_save = np.transpose(img, (2, 0, 1)).copy()
 
-directory_img = "D:/Jia Lab/ACsN/Python/Python Image Results/"
+directory_img = os.path.join(code_dir,"Python Image Results")
 
-io.imsave(directory_img + SaveFileName, img_save)
+io.imsave(os.path.join(directory_img,SaveFileName), img_save)
 
 # Save floating point matrix created from ACSN function - not transposed
-directory_arr = "D:/Jia Lab/ACsN/Python/Python Array Results/"
-pickle.dump(img, open( directory_arr + "floating_point_matrix_" + SaveFileName + ".pckl", "wb" ) )
+directory_arr = os.path.join(code_dir,"Python Array Results")
+pickle.dump(img, open(os.path.join(directory_arr,"floating_point_matrix_" + SaveFileName + ".pckl"), "wb" ) )

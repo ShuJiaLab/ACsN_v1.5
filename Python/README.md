@@ -27,27 +27,39 @@ Mandracchia, B., Hua, X., Guo, C. et al. Fast and accurate sCMOS noise correctio
 ### Hardware Requirements ###
 ACsN requires a standard computer with enough RAM to support Python >= 3.7. For minimum performance, this will be a computer with about 2 GB of RAM. For optimal performance, we recomend the following specs:
 
-RAM: 16+ GB; 
-CPU: 6+ cores, 3.2+ GHz/core.
+- RAM: 16+ GB; 
+- CPU: 6+ cores, 3.2+ GHz/core.
+- GPU: CUDA supporting devices (optional)
 
 ### Software Requirements ###
-Python 3.7+
-Windows OS 7+
-Partial functionality on Mac OS
+- Python 3.7+
+- Windows OS 7+
+- Partial functionality on Mac OS
 
 ## Install ##
 ### Command Line ###
 To run ACsN files:
 
  - Clone this repository
- - Run the command 'python setup.py install' after you're in the Sparse_Filtering folder
+ - Run the command `python setup.py install` after you're in the `Sparse_Filtering` folder
  - Install VapourSynth from https://github.com/vapoursynth/vapoursynth/releases
    - Install the R48 version if using Python 3.7. Otherwise, install the newest version
    - Once installed, got to the directory where vsrepo.py is located and install bm3d and msvfunc using the commands:
-     - vsrepo.py install bm3d
-     - vsrepo.py install msvfunc
- - Load your files using the ASCN_Run.py file. Run the ACSN_Run.py file in the terminal using the command (possible only when you're in the same directory):
-   - python ACSN_Run.py
+		```bash
+		vsrepo.py install bm3d
+		vsrepo.py install msvfunc
+		```
+ - Load your files using the `ASCN_Run.py` file. Run the `ACSN_Run.py` file in the terminal using the command (possible only when you're in the same directory):
+	```bash
+	python ACSN_Run.py
+	```
+
+### GPU Acceleration on Gain Calibration
+CPU version of linear regression fitting is available in [./ACsN_Calibration_Py/Camera_Calibration.py](./ACsN_Calibration_Py/Camera_Calibration.py)
+
+For GPU accelerated fitting you will need the extra dependency [Gpufit](https://github.com/gpufit/Gpufit). Check the calibration process in [./ACsN_Calibration_Py/Camera_Calibration_GPU.py](./ACsN_Calibration_Py/Camera_Calibration_GPU.py)
+
+### GPU BM3D
 
 ## Creators ##
 Suraj Rajendran (Python Version) and Biagio Mandracchia

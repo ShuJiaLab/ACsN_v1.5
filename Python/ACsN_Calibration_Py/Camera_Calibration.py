@@ -36,7 +36,7 @@ print("Done calculating offset and variance\n")
 
 with open('Pickle Files/Offset.pkl', 'wb') as f:
     pickle.dump(Offset, f)
-with open('Pickle Files/Variance.pckl', 'wb') as f:
+with open('Pickle Files/Variance.pkl', 'wb') as f:
     pickle.dump(Variance, f)
 
 
